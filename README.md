@@ -1,3 +1,5 @@
 # My creative Portfolio Template
 
-By Paula Menor
+You can find the project deploy here [https://pmenorrios.github.io/PORTFOLIO-TEMPLATED-paulamenor/](https://pmenorrios.github.io/PORTFOLIO-TEMPLATED-paulamenor/)
+
+> By @pmenorrios
