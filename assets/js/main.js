@@ -164,55 +164,75 @@
         }
     });
 
-    // Scroll indicator animation
-    const scrollText = document.getElementById('scrollText');
-    if (scrollText) {
-        const targetText = 'SCROLL';
-        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ<>';
-        const positions = [0, 1, 2, 3, 4, 5]; // S, C, R, O, L, L
-        let completedPositions = [];
-        let frameCount = 0;
-        
-        function animateText() {
-            frameCount++;
-            let newText = '(';
-            
-            for (let i = 0; i < targetText.length; i++) {
-                if (completedPositions.includes(i)) {
-                    // Position already completed, show correct letter
-                    newText += targetText[i];
+    // Shared glitch animation
+    function runGlitchAnimation(el, targetText, opts = {}) {
+        if (!el) return;
+        const chars = opts.chars || 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789<>()';
+        const delay = opts.delay ?? 1200;
+        const frameStep = opts.frameStep ?? 25;
+        const minFrames = opts.minFrames ?? 15;
+        const lockProbability = opts.lockProbability ?? 0.08;
+
+        let done = [];
+        let frame = 0;
+
+        const startsWithBracket = targetText.startsWith('<');
+        const endsWithBracket = targetText.endsWith('>');
+        const cleanText = targetText.replace(/^</, '').replace(/>$/, '');
+
+        function animate() {
+            frame++;
+            let next = startsWithBracket ? '<' : '';
+
+            for (let i = 0; i < cleanText.length; i++) {
+                if (done.includes(i)) {
+                    next += cleanText[i];
                 } else {
-                    // Animate this position - increased delay and lower probability for longer animation
-                    const startFrame = i * 25; // Increased from 8 to 25 frames per character
-                    const minFrames = 15; // Minimum frames before a character can lock
-                    
-                    if (frameCount > startFrame && frameCount > (startFrame + minFrames) && Math.random() < 0.08) {
-                        // Lock in the correct character (lower probability = longer animation)
-                        completedPositions.push(i);
-                        newText += targetText[i];
+                    const startFrame = i * frameStep;
+                    if (frame > startFrame && frame > (startFrame + minFrames) && Math.random() < lockProbability) {
+                        done.push(i);
+                        next += cleanText[i];
                     } else {
-                        // Show random character
-                        newText += chars[Math.floor(Math.random() * chars.length)];
+                        next += chars[Math.floor(Math.random() * chars.length)];
                     }
                 }
             }
-            
-            newText += ')';
-            scrollText.textContent = newText;
-            
-            // Continue animating until all positions are complete
-            if (completedPositions.length < targetText.length) {
-                requestAnimationFrame(animateText);
+
+            if (endsWithBracket) next += '>';
+            el.textContent = next;
+
+            if (done.length < cleanText.length) {
+                requestAnimationFrame(animate);
             } else {
-                // Animation complete, ensure final text is correct
-                scrollText.textContent = '(SCROLL)';
+                el.textContent = targetText;
             }
         }
-        
-        // Start animation after a short delay
-        setTimeout(() => {
-            animateText();
-        }, 1200);
+
+        setTimeout(animate, delay);
+    }
+
+    // Home scroll indicator
+    const scrollText = document.getElementById('scrollText');
+    if (scrollText) {
+        runGlitchAnimation(scrollText, '<SCROLL>', {
+            delay: 1200,
+            frameStep: 25,
+            minFrames: 15,
+            lockProbability: 0.08,
+            chars: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ<>'
+        });
+    }
+
+    // 404 glitch text
+    const glitch404 = document.getElementById('glitchText');
+    if (glitch404) {
+        runGlitchAnimation(glitch404, '(404 FAIL)', {
+            delay: 400,
+            frameStep: 25,
+            minFrames: 15,
+            lockProbability: 0.08,
+            chars: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789()'
+        });
     }
 
 })();

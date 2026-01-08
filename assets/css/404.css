@@ -1,0 +1,73 @@
+@font-face {
+  font-family: 'Custom Title Font';
+  src: url("https://c-p.rmcdn1.net/custom-fonts/font-657a1ad6-fafc-4949-9df2-0d6f70c12c4f.otf") format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: 200;
+  font-family: 'custom_120972';
+  font-style: normal;
+  src: url("https://c-p.rmcdn1.net/custom-fonts/font-60a2144c-2133-4539-ba0f-8545a50d4bbc.otf") format('opentype');
+  font-display: swap;
+}
+
+:root {
+  --bg: #000;
+  --text: #fff;
+  --text-muted: #cfcfcf;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "custom_120972", Arial, sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.wrapper {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.glitch-text {
+  font-size: 1rem;
+  letter-spacing: 0.3em;
+  opacity: 0;
+  animation: fadeIn 1s ease 0.6s forwards;
+}
+
+.home-link {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.home-link:hover,
+.home-link:focus {
+  color: var(--text);
+  outline: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
