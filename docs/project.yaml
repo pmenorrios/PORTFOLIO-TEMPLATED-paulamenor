@@ -2,48 +2,63 @@
 # This file will be used to generate your entry in the course showroom
 
 # Basic information
-handle: your-github-username
-name: Your Full Name
-email: your-email@udit.es
+handle: pmenorrios
+name: Paula Menor Ríos
+email: paula.menor@alumnos.udit.es
 
 # URLs (will be auto-generated if you follow naming conventions)
-github_url: https://github.com/your-username
-project_url: https://your-username.github.io/your-project-repo
-repository_url: https://github.com/your-username/your-project-repo
+github_url: https://github.com/pmenorrios
+project_url: https://pmenorrios.github.io/PORTFOLIO-TEMPLATED-paulamenor/
+repository_url: https://github.com/pmenorrios/PORTFOLIO-TEMPLATED-paulamenor
 
 # Project details
 title:
- es: Título de tu Proyecto en Español
- en: Your Project Title in English
+ es: Plantilla de Portafolio Profesional
+ en: Professional Portfolio Template
 
 abstract:
  es: |
-  Una descripción concisa de tu proyecto web en español. 
-  Explica qué construyes, para quién y por qué es importante.
+  Una plantilla de portafolio lista para producción construida con HTML, CSS y JavaScript vanilla.
+  Este proyecto demuestra fundamentos sólidos, estructura limpia y estándares profesionales,
+  manteniendo la simplicidad y accesibilidad. El diseño enfatiza tipografía grande, animaciones
+  suaves de desplazamiento y un tema oscuro para una estética moderna y profesional.
+  La plantilla es reutilizable y puede adaptarse para diferentes profesionales creativos.
  en: |
-  A concise description of your web project in English.
-  Explain what you're building, for whom, and why it matters.
+  A production-ready portfolio template built with vanilla HTML, CSS, and JavaScript.
+  This project demonstrates strong fundamentals, clean structure, and professional standards
+  while maintaining simplicity and accessibility. The design emphasizes big typography,
+  smooth scrolling animations, and a dark theme for modern, professional aesthetics.
+  The template is reusable and can be adapted for different creative professionals.
 
 # Technical tags (choose relevant ones)
 tags:
  - html5
  - css3
+ - javascript
  - responsive-design
  - accessibility
- # Add more as relevant: javascript, sass, performance, etc.
+ - semantic-html
+ - vanilla-js
+ - custom-fonts
+ - animations
+ - parallax
 
 # Learning objectives you're focusing on
 learning_focus:
  - semantic-html
  - mobile-first-design
  - web-accessibility
- # Add more as you progress
+ - css-architecture
+ - progressive-enhancement
+ - vanilla-javascript
+ - typography
+ - animations
 
 # Week tracking (update as you go)
 milestones:
- week_1_setup: false
- week_2_brief: false
- week_4_metadata: false
+ week_1_setup: true
+ week_2_brief: true
+ week_4_metadata: true
  week_5_showcase: false
 
 # Optional: link to your project brief
