@@ -71,7 +71,7 @@
 
     // Observe elements for scroll animations
     const animatedElements = document.querySelectorAll(
-        '.section__title, .about__content, .project-card, .skills__category, .contact'
+        '.section__title, .about__content, .projects, .project-card, .skills__list, .contact'
     );
 
     animatedElements.forEach(element => {
@@ -182,7 +182,7 @@
 
         function animate() {
             frame++;
-            let next = startsWithBracket ? '<' : '';
+            let next = startsWithBracket ? '(' : '';
 
             for (let i = 0; i < cleanText.length; i++) {
                 if (done.includes(i)) {
@@ -198,7 +198,7 @@
                 }
             }
 
-            if (endsWithBracket) next += '>';
+            if (endsWithBracket) next += ')';
             el.textContent = next;
 
             if (done.length < cleanText.length) {
@@ -214,7 +214,7 @@
     // Home scroll indicator
     const scrollText = document.getElementById('scrollText');
     if (scrollText) {
-        runGlitchAnimation(scrollText, '<SCROLL>', {
+        runGlitchAnimation(scrollText, '(SCROLL)', {
             delay: 1200,
             frameStep: 25,
             minFrames: 15,

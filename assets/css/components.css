@@ -295,21 +295,24 @@
 
 /* Projects Section */
 .projects {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: var(--spacing-xl);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: var(--spacing-lg);
     margin-top: var(--spacing-xl);
 }
 
 .project-card {
-    background-color: rgba(10, 10, 10, 0.6);
-    border: 1px solid var(--color-border);
-    border-radius: 8px;
-    padding: var(--spacing-xl);
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 0;
     transition: all var(--transition-base);
     opacity: 0;
-    transform: translateY(30px);
-    backdrop-filter: blur(10px);
+    transform: translateY(20px);
+    backdrop-filter: none;
+    text-align: right;
+    max-width: 100%;
 }
 
 .project-card.visible {
@@ -320,104 +323,72 @@
 
 .project-card:hover {
     transform: none;
-    border-color: var(--color-text-hover);
+    border-color: transparent;
     box-shadow: none;
 }
 
 .project-card__title {
-    font-size: var(--font-size-2xl);
-    margin-bottom: var(--spacing-sm);
+    font-size: var(--font-size-base);
+    margin-bottom: 0;
     color: var(--color-text-primary);
+    font-weight: 200;
+    letter-spacing: 0.05em;
 }
 
 .project-card__description {
-    color: var(--color-text-secondary);
-    margin-bottom: var(--spacing-md);
-    line-height: 1.7;
+    display: none;
 }
 
 .project-card__tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--spacing-xs);
-    margin-bottom: var(--spacing-md);
-    list-style: none;
-}
-
-.project-card__tag {
-    padding: var(--spacing-xs) var(--spacing-sm);
-    background-color: var(--color-bg-primary);
-    border: 1px solid var(--color-border);
-    border-radius: 4px;
-    font-size: var(--font-size-sm);
-    color: var(--color-text-secondary);
+    display: none;
 }
 
 .project-card__link {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--spacing-xs);
-    color: var(--color-text-primary);
-    font-weight: 500;
-    transition: color var(--transition-fast), gap var(--transition-fast);
+    display: none;
 }
-
-.project-card__link:hover,
-.project-card__link:focus {
-    color: var(--color-text-hover);
-    gap: var(--spacing-xs);
-}
-
+.section__title {
+    text-align: right;
+}   
 /* Skills Section */
 .skills {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: var(--spacing-xl);
+    display: flex;
+    justify-content: flex-end;
     margin-top: var(--spacing-xl);
 }
 
-.skills__category {
+.skills__list {
+    list-style: none;
+    text-align: right;
     opacity: 0;
     transform: translateY(20px);
     transition: opacity var(--transition-slow), transform var(--transition-slow);
 }
 
-.skills__category.visible {
+.skills__list.visible {
     opacity: 1;
     transform: translateY(0);
 }
 
-.skills__category-title {
-    font-size: var(--font-size-2xl);
-    margin-bottom: var(--spacing-md);
-    color: var(--color-accent);
-}
-
-.skills__list {
-    list-style: none;
-}
-
 .skills__item {
-    padding: var(--spacing-sm) 0;
-    color: var(--color-text-secondary);
-    border-bottom: 1px solid var(--color-border);
-    transition: color var(--transition-fast), padding-left var(--transition-fast);
+    padding: var(--spacing-xs) 0;
+    color: var(--color-text-primary);
+    font-size: var(--font-size-base);
+    letter-spacing: 0.05em;
+    transition: color var(--transition-fast);
+    border-bottom: none;
 }
 
 .skills__item:hover {
     color: var(--color-text-hover);
-    padding-left: var(--spacing-xs);
-}
-
-.skills__item:last-child {
-    border-bottom: none;
+    padding-left: 0;
 }
 
 /* Contact Section */
 .contact {
     max-width: 600px;
-    margin: 0 auto;
-    text-align: center;
+    margin-left: auto;
+    margin-right: 0;
+    text-align: right;
     opacity: 0;
     transform: translateY(20px);
     transition: opacity var(--transition-slow), transform var(--transition-slow);
@@ -437,7 +408,7 @@
 
 .contact__links {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     gap: var(--spacing-lg);
     flex-wrap: wrap;
 }
