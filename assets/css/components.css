@@ -4,9 +4,9 @@
     top: 0;
     left: 0;
     right: 0;
-    background-color: rgba(0, 0, 0, 0.95);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--color-border);
+    background-color: transparent;
+    backdrop-filter: none;
+    border-bottom: none;
     z-index: var(--z-header);
     transition: background-color var(--transition-base);
 }
@@ -137,29 +137,49 @@
 .intro {
     display: flex;
     align-items: center;
-    gap: var(--spacing-3xl);
+    justify-content: flex-end;
     width: 100%;
+    position: relative;
+    z-index: 2;
 }
 
 .intro__image-wrapper {
-    flex: 0 0 auto;
-    align-self: flex-start;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 100vh;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 .intro__image {
-    width: auto;
-    height: 80vh;
+    width: 100%;
+    height: 100vh;
+    min-height: 100vh;
     max-width: none;
-    min-width: auto;
+    min-width: 100%;
     display: block;
     opacity: 0;
     animation: fadeInUp 0.8s ease 0.1s forwards;
-    object-fit: contain;
+    object-fit: cover;
+    object-position: left center;
+    transform: translateY(0);
+    will-change: transform;
 }
 
 .intro__content {
-    flex: 1;
+    flex: 0 1 auto;
     text-align: left;
+    max-width: 500px;
+    position: relative;
+    z-index: 2;
+    margin-left: auto;
+    padding-left: var(--spacing-xl);
 }
 
 .intro__title {
@@ -491,19 +511,25 @@
         flex-direction: column;
         gap: var(--spacing-xl);
         text-align: center;
+        justify-content: center;
     }
     
     .intro__image-wrapper {
-        align-self: center;
+        left: 0;
+        height: 100vh;
     }
     
     .intro__image {
-        height: 60vh;
-        width: auto;
+        height: 100vh;
+        min-height: 100vh;
+        width: 100%;
+        min-width: 100%;
+        object-fit: cover;
     }
     
     .intro__content {
         text-align: center;
+        max-width: 100%;
     }
     
     .intro__title {

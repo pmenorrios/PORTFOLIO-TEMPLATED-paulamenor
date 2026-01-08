@@ -110,22 +110,47 @@
         currentYearElement.textContent = new Date().getFullYear();
     }
 
-    // Header background on scroll
+    // Header stays transparent
     const header = document.getElementById('header');
     if (header) {
-        let lastScroll = 0;
+        header.style.backgroundColor = 'transparent';
+    }
+
+    // Parallax effect for home section image
+    const parallaxImage = document.getElementById('parallaxImage');
+    if (parallaxImage) {
+        let ticking = false;
         
-        window.addEventListener('scroll', function() {
-            const currentScroll = window.pageYOffset;
+        function updateParallax() {
+            const scrolled = window.pageYOffset;
+            const homeSection = document.getElementById('home');
             
-            if (currentScroll > 50) {
-                header.style.backgroundColor = 'rgba(0, 0, 0, 0.98)';
-            } else {
-                header.style.backgroundColor = 'rgba(0, 0, 0, 0.95)';
+            if (homeSection) {
+                const homeSectionTop = homeSection.offsetTop;
+                const homeSectionHeight = homeSection.offsetHeight;
+                const windowHeight = window.innerHeight;
+                
+                // Only apply parallax when home section is in view
+                if (scrolled < homeSectionTop + homeSectionHeight) {
+                    // Parallax speed (0.5 means image moves at half the scroll speed)
+                    const parallaxSpeed = 0.3;
+                    const yPos = -(scrolled * parallaxSpeed);
+                    parallaxImage.style.transform = `translateY(${yPos}px)`;
+                }
             }
             
-            lastScroll = currentScroll;
+            ticking = false;
+        }
+        
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                window.requestAnimationFrame(updateParallax);
+                ticking = true;
+            }
         });
+        
+        // Initial call
+        updateParallax();
     }
 
     // Keyboard navigation support

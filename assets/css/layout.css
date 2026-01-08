@@ -24,6 +24,14 @@
     display: flex;
     align-items: center;
     padding: var(--spacing-2xl) 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.section--home .container {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 60%;
 }
 
 .section--about {
