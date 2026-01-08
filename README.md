@@ -1,4 +1,4 @@
-# Portfolio Template
+# Portfolio Template Paula Menor
 
 A production-ready portfolio template built with vanilla HTML, CSS, and JavaScript. This template demonstrates strong fundamentals, clean structure, and professional standards while maintaining simplicity and accessibility.
 

@@ -8,7 +8,7 @@ email: paula.menor@alumnos.udit.es
 
 # URLs (will be auto-generated if you follow naming conventions)
 github_url: https://github.com/pmenorrios
-project_url: https://pmenorrios.github.io/PORTFOLIO-TEMPLATED-paulamenor/
+project_url: http://127.0.0.1:5500/index.html#
 repository_url: https://github.com/pmenorrios/PORTFOLIO-TEMPLATED-paulamenor
 
 # Project details
@@ -18,17 +18,15 @@ title:
 
 abstract:
  es: |
-  Una plantilla de portafolio lista para producción construida con HTML, CSS y JavaScript vanilla.
-  Este proyecto demuestra fundamentos sólidos, estructura limpia y estándares profesionales,
-  manteniendo la simplicidad y accesibilidad. El diseño enfatiza tipografía grande, animaciones
-  suaves de desplazamiento y un tema oscuro para una estética moderna y profesional.
-  La plantilla es reutilizable y puede adaptarse para diferentes profesionales creativos.
+  Plantilla de portafolio lista para producción hecha solo con HTML, CSS y JavaScript vanilla.
+  Enfatiza semántica, accesibilidad y un enfoque mobile-first con tipografía grande,
+  animaciones suaves de desplazamiento y tema oscuro. Es reutilizable y fácil de adaptar
+  para distintos perfiles creativos manteniendo código limpio y mantenible.
  en: |
-  A production-ready portfolio template built with vanilla HTML, CSS, and JavaScript.
-  This project demonstrates strong fundamentals, clean structure, and professional standards
-  while maintaining simplicity and accessibility. The design emphasizes big typography,
-  smooth scrolling animations, and a dark theme for modern, professional aesthetics.
-  The template is reusable and can be adapted for different creative professionals.
+  Production-ready portfolio template built with vanilla HTML, CSS, and JavaScript.
+  It focuses on semantic, accessible, mobile-first structure with bold typography,
+  smooth scroll animations, and a dark theme. Reusable and easy to adapt for different
+  creative profiles while keeping the code clean and maintainable.
 
 # Technical tags (choose relevant ones)
 tags:
