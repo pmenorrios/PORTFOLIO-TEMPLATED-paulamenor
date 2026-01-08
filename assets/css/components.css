@@ -546,7 +546,7 @@
 /* Footer */
 .footer {
     background-color: var(--color-bg-primary);
-    border-top: 1px solid var(--color-border);
+
     padding: var(--spacing-2xl) 0;
 }
 
@@ -611,6 +611,21 @@
 .footer__dev {
     font-size: var(--font-size-base);
     color: var(--color-text-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin: 0;
+    font-family: var(--font-primary);
+}
+
+.footer__copyright {
+    margin-top: 0;
+    padding-top: var(--spacing-xl);
+    text-align: center;
+}
+
+.footer__copyright-text {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
     text-transform: uppercase;
     letter-spacing: 0.1em;
     margin: 0;
