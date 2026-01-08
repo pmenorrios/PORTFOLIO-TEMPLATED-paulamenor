@@ -8,6 +8,9 @@
     <title>Portfolio Template Paula Menor</title>
 </head>
 <body>
+    <!-- Skip to main content link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
     <!-- Navigation Header -->
     <header class="header" id="header">
         <nav class="nav" role="navigation" aria-label="Main navigation">
@@ -38,15 +41,15 @@
     </header>
 
     <!-- Main Content -->
-    <main class="main">
+    <main class="main" id="main-content">
         <!-- Home / Intro Section -->
         <section class="section section--home" id="home">
-            <div class="intro__image-wrapper">
-                <img src="./docs/images/Recurso 1imagen home page.svg" alt="Creative portfolio illustration" class="intro__image" id="parallaxImage">
+            <div class="intro__image-wrapper" aria-hidden="true">
+                <img src="./docs/images/Recurso 1imagen home page.svg" alt="" class="intro__image" id="parallaxImage" role="presentation">
             </div>
            
-            <div class="scroll-indicator" id="scrollIndicator">
-                <span class="scroll-indicator__text" id="scrollText">&lt;SCROLL&gt;</span>
+            <div class="scroll-indicator" id="scrollIndicator" aria-hidden="true">
+                <span class="scroll-indicator__text" id="scrollText" aria-label="Scroll indicator">&lt;SCROLL&gt;</span>
             </div>
         </section>
 
@@ -76,27 +79,27 @@
                 <h2 class="section__title">Projects</h2>
                 <ul class="projects__list">
                     <li class="projects__item" data-project="3d-types">
-                        <div class="project-images" id="project-3d-types-images">
-                            <img src="./docs/images/Menor_Paula_3.1_36daysoftype_RENDER_2.1.jpg" alt="3D Type Render 1" class="project-image">
-                            <img src="./docs/images/Menor_Paula_3.1_36daysoftype_RENDER_2.3.jpg" alt="3D Type Render 2" class="project-image">
-                            <img src="./docs/images/Menor_Paula_3.1_36daysoftype_CLAYRENDER_2.1.jpg" alt="3D Type Clay Render" class="project-image">
+                        <div class="project-images" id="project-3d-types-images" aria-label="3D Types project images" role="region" aria-hidden="true">
+                            <img src="./docs/images/Menor_Paula_3.1_36daysoftype_RENDER_2.1.jpg" alt="3D Type Render 1 showing typography design" class="project-image">
+                            <img src="./docs/images/Menor_Paula_3.1_36daysoftype_RENDER_2.3.jpg" alt="3D Type Render 2 showing typography design" class="project-image">
+                            <img src="./docs/images/Menor_Paula_3.1_36daysoftype_CLAYRENDER_2.1.jpg" alt="3D Type Clay Render showing typography design" class="project-image">
                         </div>
-                        <span class="projects__item-text">> 3D TYPES</span>
+                        <span class="projects__item-text" role="button" tabindex="0" aria-label="View 3D Types project images" aria-expanded="false">> 3D TYPES</span>
                     </li>
                     <li class="projects__item" data-project="posters">
-                        <div class="project-images" id="project-posters-images">
-                            <img src="./docs/images/mock animayo.png" alt="Animayo Poster" class="project-image">
-                            <img src="./docs/images/mock desarraigo.png" alt="Desarraigo Poster" class="project-image">
-                            <img src="./docs/images/mock sant jordi.png" alt="Sant Jordi Poster" class="project-image">
+                        <div class="project-images" id="project-posters-images" aria-label="Posters project images" role="region" aria-hidden="true">
+                            <img src="./docs/images/mock animayo.png" alt="Animayo festival poster design featuring manta ray illustration" class="project-image">
+                            <img src="./docs/images/mock desarraigo.png" alt="Desarraigo typography poster design with distorted letterforms" class="project-image">
+                            <img src="./docs/images/mock sant jordi.png" alt="Sant Jordi festival poster design featuring dragon illustration" class="project-image">
                         </div>
-                        <span class="projects__item-text">> POSTERS</span>
+                        <span class="projects__item-text" role="button" tabindex="0" aria-label="View Posters project images" aria-expanded="false">> POSTERS</span>
                     </li>
                     <li class="projects__item" data-project="3d-gas">
-                        <div class="project-images" id="project-3d-gas-images">
-                            <img src="./docs/images/Menor_Paula_3.1_Composition_CLAYRENDER_1.png" alt="3D Gas Composition 1" class="project-image">
-                            <img src="./docs/images/Menor_Paula_3.1_Composition_CLAYRENDER_2.png" alt="3D Gas Composition 2" class="project-image">
+                        <div class="project-images" id="project-3d-gas-images" aria-label="3D Gas project images" role="region" aria-hidden="true">
+                            <img src="./docs/images/Menor_Paula_3.1_Composition_CLAYRENDER_1.png" alt="3D Gas station composition render 1 showing nighttime scene" class="project-image">
+                            <img src="./docs/images/Menor_Paula_3.1_Composition_CLAYRENDER_2.png" alt="3D Gas station composition render 2 showing nighttime scene" class="project-image">
                         </div>
-                        <span class="projects__item-text">> 3D GAS</span>
+                        <span class="projects__item-text" role="button" tabindex="0" aria-label="View 3D Gas project images" aria-expanded="false">> 3D GAS</span>
                     </li>
                 </ul>
             </div>

@@ -84,33 +84,59 @@
     projectItems.forEach(item => {
         const projectId = item.getAttribute('data-project');
         const imagesContainer = item.querySelector('.project-images');
+        const itemText = item.querySelector('.projects__item-text');
         
-        if (imagesContainer) {
+        if (imagesContainer && itemText) {
             // Show images on hover
-            item.addEventListener('mouseenter', function() {
+            const showImages = function() {
                 // Close all other project images
                 document.querySelectorAll('.project-images').forEach(img => {
                     if (img !== imagesContainer) {
                         img.classList.remove('active');
+                        img.setAttribute('aria-hidden', 'true');
+                        const otherText = img.closest('.projects__item')?.querySelector('.projects__item-text');
+                        if (otherText) {
+                            otherText.setAttribute('aria-expanded', 'false');
+                        }
                     }
                 });
                 
                 // Show current project images
                 imagesContainer.classList.add('active');
-            });
+                imagesContainer.setAttribute('aria-hidden', 'false');
+                itemText.setAttribute('aria-expanded', 'true');
+            };
             
-            // Hide images when mouse leaves
-            item.addEventListener('mouseleave', function() {
+            const hideImages = function() {
                 imagesContainer.classList.remove('active');
+                imagesContainer.setAttribute('aria-hidden', 'true');
+                itemText.setAttribute('aria-expanded', 'false');
+            };
+            
+            // Mouse events
+            item.addEventListener('mouseenter', showImages);
+            item.addEventListener('mouseleave', hideImages);
+            imagesContainer.addEventListener('mouseenter', showImages);
+            imagesContainer.addEventListener('mouseleave', hideImages);
+            
+            // Keyboard events for accessibility
+            itemText.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    if (imagesContainer.classList.contains('active')) {
+                        hideImages();
+                    } else {
+                        showImages();
+                    }
+                }
+                if (e.key === 'Escape') {
+                    hideImages();
+                }
             });
             
-            // Keep images visible when hovering over them
-            imagesContainer.addEventListener('mouseenter', function() {
-                imagesContainer.classList.add('active');
-            });
-            
-            imagesContainer.addEventListener('mouseleave', function() {
-                imagesContainer.classList.remove('active');
+            // Focus events
+            itemText.addEventListener('focus', function() {
+                itemText.setAttribute('aria-expanded', 'false');
             });
         }
     });

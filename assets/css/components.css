@@ -16,8 +16,9 @@
     align-items: center;
     justify-content: space-between;
     padding: var(--spacing-md) var(--container-padding);
-    max-width: var(--container-max-width);
+    max-width: auto;
     margin: 0 auto;
+    background-color: var(--color-bg-primary);
 }
 
 .nav__logo {
@@ -269,13 +270,17 @@
 
 /* About Section */
 .about {
-    max-width: 700px;
+    max-width: 100%;
     margin-left: auto;
     margin-right: 0;
     text-align: right;
 }
 
 .about__content {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: 0;
+    text-align: right;
     opacity: 0;
     transform: translateY(20px);
     transition: opacity var(--transition-slow), transform var(--transition-slow);
@@ -300,6 +305,7 @@
     align-items: flex-end;
     gap: var(--spacing-lg);
     margin-top: var(--spacing-xl);
+    margin-right: 0;
     list-style: none;
 }
 
@@ -314,8 +320,15 @@
     border-bottom: none;
 }
 
-.projects__item:hover {
+.projects__item:hover,
+.projects__item:focus-within {
     color: var(--color-text-hover);
+}
+
+.projects__item-text:focus {
+    outline: 2px solid var(--color-text-primary);
+    outline-offset: 4px;
+    border-radius: 2px;
 }
 
 .project-images {
@@ -440,12 +453,14 @@
 
 .section__title {
     text-align: right;
+    margin-right: 0;
 }   
 /* Skills Section */
 .skills {
     display: flex;
     justify-content: flex-end;
     margin-top: var(--spacing-xl);
+    margin-right: 0;
 }
 
 .skills__list {
@@ -477,7 +492,7 @@
 
 /* Contact Section */
 .contact {
-    max-width: 600px;
+    max-width: 100%;
     margin-left: auto;
     margin-right: 0;
     text-align: right;
@@ -496,6 +511,10 @@
     color: var(--color-text-secondary);
     margin-bottom: var(--spacing-xl);
     line-height: 1.8;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: 0;
+    text-align: right;
 }
 
 .contact__links {
@@ -503,6 +522,9 @@
     justify-content: flex-end;
     gap: var(--spacing-lg);
     flex-wrap: wrap;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: 0;
 }
 
 .contact__link {
