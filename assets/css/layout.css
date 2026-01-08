@@ -80,6 +80,10 @@
     .section--home {
         min-height: 80vh;
     }
+    
+    .section--home .container {
+        padding-left: var(--container-padding);
+    }
 }
 
 @media (max-width: 480px) {

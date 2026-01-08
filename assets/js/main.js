@@ -78,6 +78,43 @@
         observer.observe(element);
     });
 
+    // Project images on hover
+    const projectItems = document.querySelectorAll('.projects__item[data-project]');
+    
+    projectItems.forEach(item => {
+        const projectId = item.getAttribute('data-project');
+        const imagesContainer = item.querySelector('.project-images');
+        
+        if (imagesContainer) {
+            // Show images on hover
+            item.addEventListener('mouseenter', function() {
+                // Close all other project images
+                document.querySelectorAll('.project-images').forEach(img => {
+                    if (img !== imagesContainer) {
+                        img.classList.remove('active');
+                    }
+                });
+                
+                // Show current project images
+                imagesContainer.classList.add('active');
+            });
+            
+            // Hide images when mouse leaves
+            item.addEventListener('mouseleave', function() {
+                imagesContainer.classList.remove('active');
+            });
+            
+            // Keep images visible when hovering over them
+            imagesContainer.addEventListener('mouseenter', function() {
+                imagesContainer.classList.add('active');
+            });
+            
+            imagesContainer.addEventListener('mouseleave', function() {
+                imagesContainer.classList.remove('active');
+            });
+        }
+    });
+
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
