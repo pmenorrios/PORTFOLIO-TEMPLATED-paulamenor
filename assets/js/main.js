@@ -119,9 +119,9 @@
             const currentScroll = window.pageYOffset;
             
             if (currentScroll > 50) {
-                header.style.backgroundColor = 'rgba(10, 10, 10, 0.98)';
+                header.style.backgroundColor = 'rgba(0, 0, 0, 0.98)';
             } else {
-                header.style.backgroundColor = 'rgba(10, 10, 10, 0.95)';
+                header.style.backgroundColor = 'rgba(0, 0, 0, 0.95)';
             }
             
             lastScroll = currentScroll;

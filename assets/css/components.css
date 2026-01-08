@@ -4,7 +4,7 @@
     top: 0;
     left: 0;
     right: 0;
-    background-color: rgba(10, 10, 10, 0.95);
+    background-color: rgba(0, 0, 0, 0.95);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--color-border);
     z-index: var(--z-header);
@@ -235,13 +235,14 @@
 }
 
 .project-card {
-    background-color: var(--color-bg-secondary);
+    background-color: rgba(10, 10, 10, 0.6);
     border: 1px solid var(--color-border);
     border-radius: 8px;
     padding: var(--spacing-xl);
     transition: all var(--transition-base);
     opacity: 0;
     transform: translateY(30px);
+    backdrop-filter: blur(10px);
 }
 
 .project-card.visible {
@@ -390,15 +391,76 @@
 
 /* Footer */
 .footer {
-    background-color: var(--color-bg-secondary);
+    background-color: var(--color-bg-primary);
     border-top: 1px solid var(--color-border);
-    padding: var(--spacing-lg) 0;
+    padding: var(--spacing-2xl) 0;
+}
+
+.footer__content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-xl);
     text-align: center;
 }
 
-.footer__text {
-    color: var(--color-text-secondary);
+.footer__column {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.footer__heading {
     font-size: var(--font-size-sm);
+    font-weight: 400;
+    color: var(--color-text-primary);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-family: var(--font-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.footer__links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    align-items: center;
+}
+
+.footer__link {
+    font-size: var(--font-size-base);
+    color: var(--color-text-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: color var(--transition-fast);
+    font-family: var(--font-primary);
+}
+
+.footer__link:hover,
+.footer__link:focus {
+    color: var(--color-text-secondary);
+}
+
+.footer__email {
+    font-size: var(--font-size-base);
+    color: var(--color-text-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: color var(--transition-fast);
+    font-family: var(--font-primary);
+}
+
+.footer__email:hover,
+.footer__email:focus {
+    color: var(--color-text-secondary);
+}
+
+.footer__dev {
+    font-size: var(--font-size-base);
+    color: var(--color-text-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin: 0;
+    font-family: var(--font-primary);
 }
 
 /* Responsive Adjustments */
@@ -424,5 +486,10 @@
     .contact__link {
         width: 100%;
         max-width: 300px;
+    }
+    
+    .footer__content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
     }
 }

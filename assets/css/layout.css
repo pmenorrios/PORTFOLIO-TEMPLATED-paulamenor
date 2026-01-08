@@ -9,6 +9,8 @@
 /* Main Layout */
 .main {
     min-height: 100vh;
+    position: relative;
+    z-index: 0;
 }
 
 /* Sections */
@@ -26,7 +28,7 @@
 }
 
 .section--about {
-    background-color: var(--color-bg-secondary);
+    background-color: transparent;
 }
 
 .section--projects {
@@ -34,7 +36,7 @@
 }
 
 .section--skills {
-    background-color: var(--color-bg-secondary);
+    background-color: transparent;
 }
 
 .section--contact {
