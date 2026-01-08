@@ -6,13 +6,13 @@
   --color-text-primary: #ffffff;
   --color-text-secondary: #b0b0b0;
   --color-text-hover: #d0d0d0;
-  --color-accent: #6b7fd7;
-  --color-accent-hover: #8a9de8;
+  --color-accent: #ffffff;
+  --color-accent-hover: #ffffff;
   --color-border: #2a2a2a;
 
   /* Typography */
-  --font-primary: "EB Garamond", serif;
-  --font-display: "Goudy Bookletter 1911", serif;
+  --font-primary: "custom_120972", sans-serif;
+  --font-display: "Custom Title Font", serif;
 
   /* Font Sizes */
   --font-size-xs: 0.75rem; /* 12px */
@@ -49,9 +49,23 @@
   --z-overlay: 999;
 }
 
-/* Web Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+/* Custom Font for Titles */
+@font-face {
+  font-family: 'Custom Title Font';
+  src: url("https://c-p.rmcdn1.net/custom-fonts/font-657a1ad6-fafc-4949-9df2-0d6f70c12c4f.otf") format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Custom Font for Body Text */
+@font-face {
+  font-weight: 200;
+  font-family: 'custom_120972';
+  font-style: normal;
+  src: url("https://c-p.rmcdn1.net/custom-fonts/font-60a2144c-2133-4539-ba0f-8545a50d4bbc.otf") format('opentype');
+  font-display: swap;
+}
 
 /* Base Styles */
 * {

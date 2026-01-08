@@ -164,4 +164,55 @@
         }
     });
 
+    // Scroll indicator animation
+    const scrollText = document.getElementById('scrollText');
+    if (scrollText) {
+        const targetText = 'SCROLL';
+        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ<>';
+        const positions = [0, 1, 2, 3, 4, 5]; // S, C, R, O, L, L
+        let completedPositions = [];
+        let frameCount = 0;
+        
+        function animateText() {
+            frameCount++;
+            let newText = '(';
+            
+            for (let i = 0; i < targetText.length; i++) {
+                if (completedPositions.includes(i)) {
+                    // Position already completed, show correct letter
+                    newText += targetText[i];
+                } else {
+                    // Animate this position - increased delay and lower probability for longer animation
+                    const startFrame = i * 25; // Increased from 8 to 25 frames per character
+                    const minFrames = 15; // Minimum frames before a character can lock
+                    
+                    if (frameCount > startFrame && frameCount > (startFrame + minFrames) && Math.random() < 0.08) {
+                        // Lock in the correct character (lower probability = longer animation)
+                        completedPositions.push(i);
+                        newText += targetText[i];
+                    } else {
+                        // Show random character
+                        newText += chars[Math.floor(Math.random() * chars.length)];
+                    }
+                }
+            }
+            
+            newText += ')';
+            scrollText.textContent = newText;
+            
+            // Continue animating until all positions are complete
+            if (completedPositions.length < targetText.length) {
+                requestAnimationFrame(animateText);
+            } else {
+                // Animation complete, ensure final text is correct
+                scrollText.textContent = '(SCROLL)';
+            }
+        }
+        
+        // Start animation after a short delay
+        setTimeout(() => {
+            animateText();
+        }, 1200);
+    }
+
 })();
