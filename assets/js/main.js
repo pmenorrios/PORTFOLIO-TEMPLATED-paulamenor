@@ -1,0 +1,142 @@
+/**
+ * Main JavaScript for Portfolio Template
+ * Handles navigation menu toggle and scroll-based animations
+ */
+
+(function() {
+    'use strict';
+
+    // Navigation Menu Toggle
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+    
+    if (navToggle && navMenu) {
+        navToggle.addEventListener('click', function() {
+            const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+            
+            // Toggle aria attributes for accessibility
+            navToggle.setAttribute('aria-expanded', !isExpanded);
+            navMenu.setAttribute('aria-hidden', isExpanded);
+            
+            // Toggle menu visibility
+            if (isExpanded) {
+                navMenu.classList.remove('nav__menu--open');
+            } else {
+                navMenu.classList.add('nav__menu--open');
+            }
+        });
+
+        // Close menu when clicking on a link
+        const navLinks = navMenu.querySelectorAll('.nav__link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                navToggle.setAttribute('aria-expanded', 'false');
+                navMenu.setAttribute('aria-hidden', 'true');
+                navMenu.classList.remove('nav__menu--open');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const isClickInsideNav = navMenu.contains(event.target) || navToggle.contains(event.target);
+            
+            if (!isClickInsideNav && navMenu.classList.contains('nav__menu--open')) {
+                navToggle.setAttribute('aria-expanded', 'false');
+                navMenu.setAttribute('aria-hidden', 'true');
+                navMenu.classList.remove('nav__menu--open');
+            }
+        });
+    }
+
+    // Scroll-based Animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                
+                // For project cards, add staggered animation
+                if (entry.target.classList.contains('project-card')) {
+                    const cards = document.querySelectorAll('.project-card');
+                    const index = Array.from(cards).indexOf(entry.target);
+                    entry.target.style.transitionDelay = `${index * 0.1}s`;
+                }
+            }
+        });
+    }, observerOptions);
+
+    // Observe elements for scroll animations
+    const animatedElements = document.querySelectorAll(
+        '.section__title, .about__content, .project-card, .skills__category, .contact'
+    );
+
+    animatedElements.forEach(element => {
+        observer.observe(element);
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            
+            // Skip if it's just "#"
+            if (href === '#' || href === '#!') {
+                return;
+            }
+
+            const target = document.querySelector(href);
+            
+            if (target) {
+                e.preventDefault();
+                const headerOffset = 80;
+                const elementPosition = target.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Update current year in footer
+    const currentYearElement = document.getElementById('currentYear');
+    if (currentYearElement) {
+        currentYearElement.textContent = new Date().getFullYear();
+    }
+
+    // Header background on scroll
+    const header = document.getElementById('header');
+    if (header) {
+        let lastScroll = 0;
+        
+        window.addEventListener('scroll', function() {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 50) {
+                header.style.backgroundColor = 'rgba(10, 10, 10, 0.98)';
+            } else {
+                header.style.backgroundColor = 'rgba(10, 10, 10, 0.95)';
+            }
+            
+            lastScroll = currentScroll;
+        });
+    }
+
+    // Keyboard navigation support
+    document.addEventListener('keydown', function(e) {
+        // Close menu on Escape key
+        if (e.key === 'Escape' && navMenu && navMenu.classList.contains('nav__menu--open')) {
+            navToggle.setAttribute('aria-expanded', 'false');
+            navMenu.setAttribute('aria-hidden', 'true');
+            navMenu.classList.remove('nav__menu--open');
+            navToggle.focus();
+        }
+    });
+
+})();

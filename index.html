@@ -3,11 +3,202 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio template showcasing creative work and professional projects">
     <link rel="stylesheet" href="./assets/css/index.css">
-    <title>Document</title>
+    <title>Portfolio Template | Creative Works</title>
 </head>
 <body>
-    
+    <!-- Navigation Header -->
+    <header class="header" id="header">
+        <nav class="nav" role="navigation" aria-label="Main navigation">
+            <a href="#home" class="nav__logo" aria-label="Home">Portfolio</a>
+            <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="nav__toggle-line"></span>
+                <span class="nav__toggle-line"></span>
+                <span class="nav__toggle-line"></span>
+            </button>
+            <ul class="nav__menu" id="navMenu">
+                <li class="nav__item">
+                    <a href="#home" class="nav__link">Home</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#about" class="nav__link">About</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#projects" class="nav__link">Projects</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#skills" class="nav__link">Skills</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#contact" class="nav__link">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Home / Intro Section -->
+        <section class="section section--home" id="home">
+            <div class="container">
+                <div class="intro">
+                    <h1 class="intro__title">
+                        <span class="intro__title-line">Creative</span>
+                        <span class="intro__title-line">Portfolio</span>
+                    </h1>
+                    <p class="intro__subtitle">A showcase of design, development, and creative thinking</p>
+                    <a href="#projects" class="btn btn--primary">View Work</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="section section--about" id="about">
+            <div class="container">
+                <h2 class="section__title">About</h2>
+                <div class="about">
+                    <div class="about__content">
+                        <p class="about__text">
+                            I'm a creative professional passionate about building beautiful, functional, and accessible digital experiences. 
+                            This portfolio template demonstrates strong fundamentals in web development, focusing on clean code, 
+                            semantic structure, and thoughtful design.
+                        </p>
+                        <p class="about__text">
+                            Every project is an opportunity to learn, grow, and create something meaningful. 
+                            I believe in the power of simplicity and the importance of user-centered design.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="section section--projects" id="projects">
+            <div class="container">
+                <h2 class="section__title">Projects</h2>
+                <div class="projects">
+                    <article class="project-card">
+                        <div class="project-card__content">
+                            <h3 class="project-card__title">Project One</h3>
+                            <p class="project-card__description">
+                                A responsive web application built with vanilla JavaScript, showcasing modern design principles 
+                                and clean architecture. Focus on performance and user experience.
+                            </p>
+                            <ul class="project-card__tags">
+                                <li class="project-card__tag">HTML</li>
+                                <li class="project-card__tag">CSS</li>
+                                <li class="project-card__tag">JavaScript</li>
+                            </ul>
+                            <a href="#" class="project-card__link" aria-label="View Project One">View Project →</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-card__content">
+                            <h3 class="project-card__title">Project Two</h3>
+                            <p class="project-card__description">
+                                An interactive design system exploring typography, color, and layout. 
+                                Demonstrates attention to detail and creative problem-solving.
+                            </p>
+                            <ul class="project-card__tags">
+                                <li class="project-card__tag">Design</li>
+                                <li class="project-card__tag">Typography</li>
+                                <li class="project-card__tag">CSS</li>
+                            </ul>
+                            <a href="#" class="project-card__link" aria-label="View Project Two">View Project →</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-card__content">
+                            <h3 class="project-card__title">Project Three</h3>
+                            <p class="project-card__description">
+                                A portfolio website template emphasizing accessibility and semantic HTML. 
+                                Built with progressive enhancement and mobile-first principles.
+                            </p>
+                            <ul class="project-card__tags">
+                                <li class="project-card__tag">Accessibility</li>
+                                <li class="project-card__tag">Semantic HTML</li>
+                                <li class="project-card__tag">Responsive</li>
+                            </ul>
+                            <a href="#" class="project-card__link" aria-label="View Project Three">View Project →</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="section section--skills" id="skills">
+            <div class="container">
+                <h2 class="section__title">Skills</h2>
+                <div class="skills">
+                    <div class="skills__category">
+                        <h3 class="skills__category-title">Frontend</h3>
+                        <ul class="skills__list">
+                            <li class="skills__item">HTML5</li>
+                            <li class="skills__item">CSS3</li>
+                            <li class="skills__item">JavaScript</li>
+                            <li class="skills__item">Responsive Design</li>
+                        </ul>
+                    </div>
+                    <div class="skills__category">
+                        <h3 class="skills__category-title">Design</h3>
+                        <ul class="skills__list">
+                            <li class="skills__item">UI/UX Design</li>
+                            <li class="skills__item">Typography</li>
+                            <li class="skills__item">Color Theory</li>
+                            <li class="skills__item">Accessibility</li>
+                        </ul>
+                    </div>
+                    <div class="skills__category">
+                        <h3 class="skills__category-title">Tools</h3>
+                        <ul class="skills__list">
+                            <li class="skills__item">Git</li>
+                            <li class="skills__item">Code Editor</li>
+                            <li class="skills__item">Browser DevTools</li>
+                            <li class="skills__item">Design Software</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="section section--contact" id="contact">
+            <div class="container">
+                <h2 class="section__title">Contact</h2>
+                <div class="contact">
+                    <p class="contact__text">
+                        Interested in working together or have a question? 
+                        Feel free to reach out through any of the channels below.
+                    </p>
+                    <div class="contact__links">
+                        <a href="mailto:hello@example.com" class="contact__link" aria-label="Send email">
+                            Email
+                        </a>
+                        <a href="https://github.com" class="contact__link" target="_blank" rel="noopener noreferrer" aria-label="Visit GitHub profile">
+                            GitHub
+                        </a>
+                        <a href="https://linkedin.com" class="contact__link" target="_blank" rel="noopener noreferrer" aria-label="Visit LinkedIn profile">
+                            LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer__text">
+                &copy; <span id="currentYear"></span> Portfolio Template. Built with HTML, CSS, and JavaScript.
+            </p>
+        </div>
+    </footer>
+
+    <script src="./assets/js/main.js" defer></script>
 </body>
 </html>
-
