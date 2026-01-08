@@ -2,7 +2,7 @@
 
 ## Trends
 
-- [Big typographies]
+- [small typographies in uppercase]
 - [Scrolling animation]
 - [Dark theme]
 
