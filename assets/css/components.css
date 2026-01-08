@@ -29,7 +29,7 @@
 
 .nav__logo:hover,
 .nav__logo:focus {
-    color: var(--color-accent);
+    color: var(--color-text-hover);
 }
 
 /* Navigation Menu */
@@ -59,12 +59,12 @@
 
 .nav__link:hover,
 .nav__link:focus {
-    color: var(--color-text-primary);
+    color: var(--color-text-hover);
 }
 
 .nav__link:hover::after,
 .nav__link:focus::after {
-    width: 100%;
+    display: none;
 }
 
 /* Mobile Menu Toggle */
@@ -231,17 +231,20 @@
 }
 
 .btn--primary {
-    background-color: var(--color-accent);
+    background-color: transparent;
     color: var(--color-text-primary);
+    border: 1px solid var(--color-text-primary);
     opacity: 0;
     animation: fadeInUp 0.8s ease 0.7s forwards;
 }
 
 .btn--primary:hover,
 .btn--primary:focus {
-    background-color: var(--color-accent-hover);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(107, 127, 215, 0.3);
+    background-color: transparent;
+    border-color: var(--color-text-hover);
+    color: var(--color-text-hover);
+    transform: none;
+    box-shadow: none;
 }
 
 /* About Section */
@@ -294,9 +297,9 @@
 }
 
 .project-card:hover {
-    transform: translateY(-8px);
-    border-color: var(--color-accent);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    transform: none;
+    border-color: var(--color-text-hover);
+    box-shadow: none;
 }
 
 .project-card__title {
@@ -332,14 +335,15 @@
     display: inline-flex;
     align-items: center;
     gap: var(--spacing-xs);
-    color: var(--color-accent);
+    color: var(--color-text-primary);
     font-weight: 500;
-    transition: gap var(--transition-fast);
+    transition: color var(--transition-fast), gap var(--transition-fast);
 }
 
 .project-card__link:hover,
 .project-card__link:focus {
-    gap: var(--spacing-sm);
+    color: var(--color-text-hover);
+    gap: var(--spacing-xs);
 }
 
 /* Skills Section */
@@ -379,8 +383,8 @@
 }
 
 .skills__item:hover {
-    color: var(--color-text-primary);
-    padding-left: var(--spacing-sm);
+    color: var(--color-text-hover);
+    padding-left: var(--spacing-xs);
 }
 
 .skills__item:last-child {
@@ -418,7 +422,7 @@
 
 .contact__link {
     padding: var(--spacing-sm) var(--spacing-lg);
-    border: 2px solid var(--color-accent);
+    border: 1px solid var(--color-text-primary);
     border-radius: 4px;
     font-weight: 500;
     transition: all var(--transition-base);
@@ -426,9 +430,10 @@
 
 .contact__link:hover,
 .contact__link:focus {
-    background-color: var(--color-accent);
-    color: var(--color-text-primary);
-    transform: translateY(-2px);
+    background-color: transparent;
+    border-color: var(--color-text-hover);
+    color: var(--color-text-hover);
+    transform: none;
 }
 
 /* Footer */
@@ -479,7 +484,7 @@
 
 .footer__link:hover,
 .footer__link:focus {
-    color: var(--color-text-secondary);
+    color: var(--color-text-hover);
 }
 
 .footer__email {
@@ -493,7 +498,7 @@
 
 .footer__email:hover,
 .footer__email:focus {
-    color: var(--color-text-secondary);
+    color: var(--color-text-hover);
 }
 
 .footer__dev {
