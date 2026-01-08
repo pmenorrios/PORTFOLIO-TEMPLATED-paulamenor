@@ -147,13 +147,14 @@
 }
 
 .intro__image {
-    width: 100%;
-    max-width: 700px;
-    min-width: 400px;
-    height: auto;
+    width: auto;
+    height: 80vh;
+    max-width: none;
+    min-width: auto;
     display: block;
     opacity: 0;
     animation: fadeInUp 0.8s ease 0.1s forwards;
+    object-fit: contain;
 }
 
 .intro__content {
@@ -497,8 +498,8 @@
     }
     
     .intro__image {
-        max-width: 100%;
-        min-width: auto;
+        height: 60vh;
+        width: auto;
     }
     
     .intro__content {
